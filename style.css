@@ -1,0 +1,200 @@
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: url('1732280658615.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  background: rgba(255, 182, 193, 0.3);
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.section {
+  margin: 20px 0;
+  transition: opacity 0.3s ease-in-out;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.hidden {
+  display: none;
+}
+
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: rgba(222, 31, 127, 0.8);
+  color: rgb(239, 223, 231);
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(207, 24, 158, 0.9);
+}
+video {
+  display: none; /* Hidden by default */
+  max-width: 90%;
+  max-height: 90%;
+  z-index: 1000; /* Ensures it's above other elements */
+  background: #000; /* Optional: Background for better visibility */
+}
+.section h2 {
+  font-size: 1.8em;
+  color: #0a0a0a; /* Lovely pink */
+  text-align: center;
+}
+
+.section p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  text-align: center;
+  margin: 20px auto;
+  max-width: 80%;
+}
+.video-container video {
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+.hidden {
+  display: none;
+}
+/* Hidden state */
+.hidden {
+  opacity: 0;
+  max-height: 0; /* Collapse the element */
+  overflow: hidden; /* Prevents scrollbars */
+  transition: opacity 0.5s ease, max-height 0.5s ease; /* Smooth transition */
+}
+
+/* Visible state */
+.visible {
+  opacity: 1;
+  max-height: 1000px; /* Enough height to fully show content */
+  transition: opacity 0.5s ease, max-height 0.5s ease; /* Smooth transition */
+}
+/* Add these styles to your CSS file */
+#letter-wrapper {
+  position: relative;
+  width: 300px;
+  margin: 20px auto;
+}
+
+#letter-envelope {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+}
+
+.envelope-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #d0d0d0;
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
+  transition: transform 0.5s ease;
+}
+
+#letter-content {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: all 0.5s ease;
+}
+
+#letter-content.hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+#letter-content.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.envelope-open .envelope-flap {
+  transform: rotateX(180deg);
+  transform-origin: top;
+}
+
+.envelope-open {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+/* Add these styles to your CSS file */
+#letter-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  margin-top: 20px;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#letter-content.hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+#letter-content.visible {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.hidden {
+  display: none;
+}
+
+.video-container {
+  text-align: center;
+  position: relative; /* Allows centering with transform */
+  width: 100%; /* Ensures full width container */
+  height: 100vh; /* Full viewport height */
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  background: rgba(0, 0, 0, 0.7); /* Optional: Dark background for focus */
+}
+
+video {
+  display: block; /* Ensure it's treated as a block element */
+  width: 60%; /* Medium size, adjust as needed */
+  max-height: 70%; /* Keep aspect ratio */
+  border-radius: 10px; /* Rounded edges */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Nice shadow for depth */
+  background: #000; /* Black background */
+}
+#final-video {
+  display: none; /* Hidden by default */
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}

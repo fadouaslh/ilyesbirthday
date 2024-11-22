@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Quiz for My Love</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Welcome Section -->
+    <div id="welcome" class="section">
+      <h1>Hellooooooooooooooo my birthday boyyyyyy! 🎉</h1>
+      <p>Let’s see if you’re really the birthday boy 👀</p>
+      <button onclick="startQuiz()">Let’s Start</button>
+    </div>
+
+    <!-- Question 1 -->
+    <div id="question1" class="section hidden">
+      <h2>Wait! Are you really the birthday boy? 🤔</h2>
+      <button onclick="showNext('question2')">Yes once</button>
+      <button onclick="showNext('question2')">Yes twice</button>
+      <button onclick="showNext('question2')">Yesssssssssssssssss</button>
+    </div>
+
+    <!-- Question 2 -->
+    <div id="question2" class="section hidden">
+      <h2>What is your hot, pretty, cute, smart girlfriend’s name? 😘</h2>
+      <button onclick="validateName('fadoua')">Fadoua</button>
+      <button onclick="validateName('fadouaaa')">Fadouaaa El Chikouraaaaa</button>
+    </div>
+
+    <!-- Question 3 -->
+    <div id="question3" class="section hidden">
+      <h2>Do you love her? ❤️</h2>
+      <button onclick="validateLove('yes')">Yes</button>
+      <button onclick="validateLove('no')">No</button>
+    </div>
+
+    <!-- Result Section -->
+    <div id="result" class="section hidden">
+      <h2 id="result-message"></h2>
+      <button id="next-action" class="hidden" onclick="showNext('final')">What?</button>
+    </div>
+
+    <!-- Love Response Section -->
+    <div id="love-response" class="section hidden">
+      <h2>She loves you moreeeeeeeeeeeeee! 🥰💖</h2>
+      <button onclick="showKissMe()">Kiss me!</button>
+    </div>
+
+    <!-- New Question: "Kiss me!" -->
+    <div id="kiss-me" class="section hidden">
+      <h2>Kiss me! 😘</h2>
+      <button onclick="goToBigTurn()">Mwah!</button>
+    </div>
+
+    <!-- Big Turn Section -->
+    <div id="big-turn" class="section hidden">
+      <h2>Big turnnnnnnnnn! 🔥</h2>
+      <button onclick="showNext('book-question')">Continue</button>
+    </div>
+
+    <!-- Book Question -->
+    <div id="book-question" class="section hidden">
+      <h2>What is her favorite book? 📚😡</h2>
+      <button onclick="checkBookAnswer('powerless')">Powerless</button>
+      <button onclick="checkBookAnswer('fourthwing')">Fourthwing</button>
+      <button onclick="checkBookAnswer('ourstory')">Our Story</button>
+    </div>
+
+    <!-- Response Section -->
+    <div id="response-section" class="section hidden">
+      <h2 id="book-response"></h2>
+      <button onclick="showNext('book-question')">Choose wisely</button>
+    </div>
+
+    <!-- Final "Nowwwwwwwww" Section -->
+    <div id="now-screen" class="section hidden">
+      <h2>Nowwwwwwwww!</h2>
+      <button onclick="showNext('surprise-screen')">Next</button>
+    </div>
+
+    <!-- Surprise Screen -->
+    <div id="surprise-screen" class="section hidden">
+      <h2>Hope you liked the surprise! 🎁</h2>
+      <p>Bn8 with ❤️❤️</p>
+      <button onclick="showNext('wait-screen')">Next</button>
+    </div>
+
+    <!-- Wait Screen -->
+    <div id="wait-screen" class="section hidden">
+      <h2>Wait!!!!</h2>
+      <button onclick="showVideoButton()">Next</button>
+    </div>
+
+    <!-- Video Section -->
+    <div id="video-section" class="section hidden">
+      <div class="video-container">
+        <h2>Enjoy the video! 🎬</h2>
+        <div id="video-start-screen">
+          <button id="watch-video-btn" style="display: none;" onclick="playVideo()">Watch Video ▶️</button>
+        </div>
+        <video id="birthday-video" controls style="display: none;">
+          <source src="lv_0_20241122005055.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <button id="next-video-btn" onclick="showNext('final')" style="display: none;">Next</button>
+      </div>
+    </div>
+
+<!-- Replace your current letter sections with this simpler version -->
+<div id="letter-intro" class="section hidden">
+  <h2>Now, Ilyes, I have a letter for you!</h2>
+  <button onclick="openLetter()">Open the Letter</button>
+  <div id="letter-content" class="hidden">
+    <p>
+      Ilyesssssssssssssss darlingg, I just wanted to ask u if u can say THANK YOU to ur father 
+      cuz he didn't use a condom that night ❤️ and thanks to Tata Sabrina cuz she held ur ass 
+      for 9 months ??? (don't actually say ty I'm joking 😂). Anyway, I love youuu very very much, 
+      thanks for being with me and for handling my mood swings. I hope one day we will celebrate 
+      ur birthday irl hahahahahah (yes u can turn it to ahahah) mwahh.
+    </p>
+    <button onclick="goToMwah()">Mwah</button>
+  </div>
+</div>
+
+
+<!-- Mwah Section -->
+<div id="mwah-section" class="section hidden">
+  <h2>Now let’s watch another video! (Zoom it for a better experience)</h2>
+  <button onclick="showSecondVideo()">Watch the Video</button>
+</div>
+
+<!-- Second Video Section -->
+<div id="second-video-section" class="section hidden">
+  <div class="video-container">
+    <video id="second-video" controls style="display: none;">
+      <source src="lv_7410994536073186565_20241122201829.mp4"type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<!-- Button "And Finally" -->
+<div id="and-finally-section" class="section hidden">
+  <h2>And finally...</h2>
+  <button id="and-finally-btn" onclick="showMwahMessage()">Click Me</button>
+</div>
+
+<!-- Mwah Message -->
+<div id="mwah-message-section" class="section hidden">
+  <h2 id="mwah-message">Mwahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</h2>
+  <button id="mwah-btn" onclick="showFinalVideo()">Mwah</button>
+</div>
+
+<!-- Final Video Section -->
+<div id="final-video-section" class="section hidden">
+  <div class="video-container">
+    <video id="final-video" controls>
+      <source src="Snapchat-116545530.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+
+  <script src="script.js" defer></script>
+</body>
+</html>
